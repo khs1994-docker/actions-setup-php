@@ -1,0 +1,19 @@
+{
+  "name": "setup-php",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/setup-php.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "@actions/core": "^1.0.0",
+    "@actions/exec": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

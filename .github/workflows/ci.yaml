@@ -1,0 +1,32 @@
+on:
+  push:
+
+name: CI
+
+jobs:
+  ci:
+    strategy:
+      matrix:
+        php:
+          - nightly
+          - 7.4.0alpha
+          - 7.3.8
+          - 7.2.21
+          - 7.1.31
+          - 7.0.33
+          - 5.6.40
+    runs-on: ubuntu-latest
+    steps:
+      - name: Without version
+        use: ./
+        with:
+          args: |
+            bash -c "php -v \
+            ; env \
+            "
+      - name: Check version
+        use: ./
+        with:
+          php-version: ${{ matrix.php }}
+          args: |
+            bash -c "php -v"
