@@ -7,7 +7,7 @@ jobs:
   ci:
     strategy:
       matrix:
-        php:
+        php_version:
           - nightly
           - 7.4.0alpha
           - 7.3.8
@@ -29,6 +29,7 @@ jobs:
       - name: Check version
         use: ./
         with:
-          php_version: ${{ matrix.php }}
+          php_version: ${{ matrix.php_version }}
           args: |
+            set -x
             php -v
