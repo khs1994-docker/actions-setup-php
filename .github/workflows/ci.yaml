@@ -24,12 +24,11 @@ jobs:
         use: ./
         with:
           args: |
-            bash -c "php -v \
-            ; env \
-            "
+            php -v \
+            ; env
       - name: Check version
         use: ./
         with:
           php_version: ${{ matrix.php }}
           args: |
-            bash -c "php -v"
+            php -v
