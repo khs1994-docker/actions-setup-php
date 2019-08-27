@@ -4,9 +4,9 @@ name: 'setup-php'
 description: 'Set up your GitHub Actions workflow with a specific version of PHP'
 author: 'khs1994'
 inputs:
-  php-version:
+  php_version:
     description: PHP version
     default: 7.3.8
 runs:
   using: 'node12'
-  image: 'lib/setup-php.js'
+  main: 'lib/setup-php.js'

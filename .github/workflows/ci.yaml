@@ -27,6 +27,6 @@ jobs:
       - name: Check version
         use: ./
         with:
-          php-version: ${{ matrix.php }}
+          php_version: ${{ matrix.php }}
           args: |
             bash -c "php -v"
