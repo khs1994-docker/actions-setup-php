@@ -24,8 +24,8 @@ jobs:
         use: ./
         with:
           args: |
-            php -v \
-            ; env
+            bash -c "php -v \
+            ; env"
       - name: Check version
         use: ./
         with:
