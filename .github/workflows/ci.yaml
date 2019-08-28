@@ -23,6 +23,7 @@ jobs:
           fetch-depth: 2
       - name: Composer
         uses: ./
+        # uses: khs1994-docker/actions-setup-php@master
         with:
           php_type: composer
           args: |
@@ -31,12 +32,14 @@ jobs:
             composer global config -l
       - name: Without version
         uses: ./
+        # uses: khs1994-docker/actions-setup-php@master
         with:
           args: |
             php -v
             env
       - name: Check version
         uses: ./
+        # uses: khs1994-docker/actions-setup-php@master
         with:
           php_version: ${{ matrix.php_version }}
           args: |
