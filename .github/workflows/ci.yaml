@@ -21,6 +21,14 @@ jobs:
       - uses: actions/checkout@master
         with:
           fetch-depth: 2
+      - name: Composer
+        uses: ./
+        with:
+          composer: true
+          args: |
+            php -v
+            composer --version
+            composer global config -l
       - name: Without version
         uses: ./
         with:
