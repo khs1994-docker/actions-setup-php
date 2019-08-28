@@ -7,9 +7,9 @@ inputs:
   php_version:
     description: PHP version
     default: 7.3.8
-  composer:
-    description: use composer replace fpm
-    default: false
+  php_type:
+    description: php image type, fpm composer or swoole
+    default: fpm
 runs:
   using: 'node12'
   main: 'lib/setup-php.js'

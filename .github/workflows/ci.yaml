@@ -24,7 +24,7 @@ jobs:
       - name: Composer
         uses: ./
         with:
-          composer: true
+          php_type: composer
           args: |
             php -v
             composer --version
