@@ -24,12 +24,14 @@ jobs:
         uses: ./
         with:
           args: |
-            bash -c "php -v \
-            ; env"
+            php -v
+            env
       - name: Check version
         uses: ./
         with:
           php_version: ${{ matrix.php_version }}
           args: |
+            mv /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini.default \
+                    /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini || true
             set -x
             php -v
