@@ -4,7 +4,8 @@ on:
 name: CI
 
 jobs:
-  ci:
+  php:
+    name: PHP
     strategy:
       matrix:
         php_version:
