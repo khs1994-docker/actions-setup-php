@@ -21,13 +21,13 @@ jobs:
         with:
           fetch-depth: 2
       - name: Without version
-        use: ./
+        uses: ./
         with:
           args: |
             bash -c "php -v \
             ; env"
       - name: Check version
-        use: ./
+        uses: ./
         with:
           php_version: ${{ matrix.php_version }}
           args: |
