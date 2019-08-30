@@ -25,6 +25,7 @@ jobs:
         uses: ./
         # uses: khs1994-docker/actions-setup-php@master
         with:
+          job_services_network: ${{ job.services.network }}
           php_type: composer
           args: |
             php -v
@@ -34,6 +35,7 @@ jobs:
         uses: ./
         # uses: khs1994-docker/actions-setup-php@master
         with:
+          job_services_network: ${{ job.services.network }}
           args: |
             php -v
             env
@@ -42,6 +44,7 @@ jobs:
         # uses: khs1994-docker/actions-setup-php@master
         with:
           php_version: ${{ matrix.php_version }}
+          job_services_network: ${{ job.services.network }}
           args: |
             mv /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini.default \
                     /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini || true
