@@ -1,0 +1,18 @@
+on:
+  push:
+  pull_request:
+
+name: Service Network
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Test Network"
+        with:
+          job_services_network: ${{ job.services.network }}
+          args: |
+            ping redis -c 4
+    services:
+      mysql:
+        image: redis:5.0.5-alpine

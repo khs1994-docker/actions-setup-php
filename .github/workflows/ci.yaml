@@ -25,9 +25,10 @@ jobs:
         uses: ./
         # uses: khs1994-docker/actions-setup-php@master
         with:
-          job_services_network: ${{ job.services.network }}
+          # job_services_network: ${{ job.services.network }}
           php_type: composer
           args: |
+            echo container network is default: bridge
             php -v
             composer --version
             composer global config -l
@@ -37,6 +38,7 @@ jobs:
         with:
           job_services_network: ${{ job.services.network }}
           args: |
+            echo 'container network is "",but change to: bridge'
             php -v
             env
       - name: Check version
