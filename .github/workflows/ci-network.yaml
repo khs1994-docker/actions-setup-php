@@ -2,10 +2,11 @@ on:
   push:
   pull_request:
 
-name: Service Network
+name: CI
 
 jobs:
   test:
+    name: Service Network
     runs-on: ubuntu-latest
     steps:
       - name: "Test Network"
