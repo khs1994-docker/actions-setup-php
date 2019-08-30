@@ -12,13 +12,13 @@ jobs:
       - uses: actions/checkout@master
         with:
           fetch-depth: 2
-      - name: "Test Network"
-        uses: ./
-        # uses: khs1994-docker/actions-setup-php@master
-        with:
-          job_services_network: ${{ job.services.network }}
-          args: |
-            ping redis -c 4
+#       - name: "Test Network"
+#         uses: ./
+#         # uses: khs1994-docker/actions-setup-php@master
+#         with:
+#           job_services_network: ${{ job.services.network }}
+#           args: |
+#             ping redis -c 4
       - name: Dump job context
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
