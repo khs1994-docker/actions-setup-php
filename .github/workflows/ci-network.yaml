@@ -19,6 +19,10 @@ jobs:
           job_services_network: ${{ job.services.network }}
           args: |
             ping redis -c 4
+      - name: Dump job context
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: echo "$JOB_CONTEXT"          
     services:
       redis:
         image: redis:5.0.5-alpine
