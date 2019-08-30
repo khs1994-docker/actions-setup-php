@@ -2,13 +2,16 @@ on:
   push:
   pull_request:
 
-name: CI
+name: Service Network
 
 jobs:
-  test:
-    name: Service Network
+  check:
+    name: check
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 2
       - name: "Test Network"
         uses: ./
         # uses: khs1994-docker/actions-setup-php@master
@@ -17,5 +20,5 @@ jobs:
           args: |
             ping redis -c 4
     services:
-      mysql:
+      redis:
         image: redis:5.0.5-alpine
